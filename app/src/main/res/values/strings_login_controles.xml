@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_login_etUsuarios_Login">Correo</string>
+    <string name="str_login_etContraseña_Login">Contraseña</string>
+    <string name="str_login_btLogin_Login">Login</string>
+</resources>

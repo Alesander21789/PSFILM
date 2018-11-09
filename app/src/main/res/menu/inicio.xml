@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item
+        android:id="@+id/itBuscar_inicio"
+        android:title="@string/str_inicio_item_itBuscar_inicio"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="always"
+        android:tooltipText="buscar"/>
+    <item
+        android:id="@+id/itImagenRegistro_inicio"
+        android:icon="@drawable/ic_action_group"
+        android:orderInCategory="100"
+        android:title="@string/str_inicio_item_itImagenRegistro_inicio"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/itImagenLogin_inicio"
+        android:icon="@drawable/ic_action_person"
+        android:orderInCategory="100"
+        android:title="@string/str_inicio_item_itImagenLogin_inicio"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/itCargarxml_inicio"
+        android:icon="@drawable/ic_action_person"
+        android:orderInCategory="100"
+        android:title="Cargar xml"
+        app:showAsAction="never" />
+
+</menu>
