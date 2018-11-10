@@ -1,9 +1,10 @@
 package com.cifprodolfoucha.PSFilms;
 
 import android.app.Activity;
-import android.content.Intent;
+
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
@@ -33,6 +34,7 @@ import java.util.ArrayList;
 public class Activity_Informacion extends AppCompatActivity  implements fragmentResumen.OnFragmentInteractionListener, fragmentReparto.OnFragmentInteractionListener ,fragmentOtras.OnFragmentInteractionListener,fragmentComentarios.OnFragmentInteractionListener, View.OnClickListener  {
     ImageView iv_trigger;
     CoordinatorLayout layout;
+    ConstraintLayout layout1;
     private RecyclerView comentarios;
     private GridLayoutManager glm;
     private Activity activity;
@@ -46,11 +48,12 @@ public class Activity_Informacion extends AppCompatActivity  implements fragment
         setContentView(R.layout.layout_informacion_activity);
 
 
-        Toolbar toolbar =(Toolbar)findViewById(R.id.toolbar);
+        Toolbar toolbar =(Toolbar)findViewById(R.id.tb_informacion);
         setSupportActionBar(toolbar);
+
         getSupportActionBar().setTitle("");
 
-        layout=(CoordinatorLayout) findViewById(R.id.coordinator);
+        layout= findViewById(R.id.coordinator);
 
 
         // Persistent BottomSheet
@@ -61,6 +64,7 @@ public class Activity_Informacion extends AppCompatActivity  implements fragment
 
         adapter= new ComentariosAdapter(dataSet());
         comentarios.setAdapter(adapter);
+
     }
 
 
@@ -213,13 +217,13 @@ public class Activity_Informacion extends AppCompatActivity  implements fragment
     public void onClick(View v) {
 
 
-
-
-
     }
 
 
+
+
     public void init_persistent_bottomsheet() {
+/*
         View persistentbottomSheet = layout.findViewById(R.id.bottomsheet);
         iv_trigger = (ImageView) persistentbottomSheet.findViewById(R.id.iv_fab);
         final BottomSheetBehavior behavior = BottomSheetBehavior.from(persistentbottomSheet);
@@ -268,7 +272,11 @@ public class Activity_Informacion extends AppCompatActivity  implements fragment
                     // React to dragging events
 
                 }
+
+
             });
+*/
+
     }}
 
 

@@ -4,7 +4,8 @@
     android:id="@+id/cdCordinatorLayout_Informacion"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity_Informacion">
+    tools:context=".Activity_Informacion"
+    android:theme="@style/toolbar">
 
     <include layout="@layout/layout_informacion_bottomsheet_activity" />
 
@@ -36,7 +37,7 @@
             android:scrollbars="none">
 
             <include
-                android:id="@+id/toolbar"
+                android:id="@+id/tb_informacion"
                 layout="@layout/toolbar_informacion"
                 android:background="?attr/colorPrimary"
                 android:minHeight="?attr/actionBarSize"
