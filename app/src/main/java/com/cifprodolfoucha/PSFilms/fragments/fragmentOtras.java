@@ -1,14 +1,23 @@
 package com.cifprodolfoucha.PSFilms.fragments;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.cifprodolfoucha.PSFilms.R;
+import com.cifprodolfoucha.PSFilms.clases.Pelicula;
+import com.cifprodolfoucha.PSFilms.clasesAdaptadoras.ComentariosAdapter;
+import com.cifprodolfoucha.PSFilms.clasesAdaptadoras.PeliculasAdapter;
+
+import java.util.ArrayList;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,9 +26,11 @@ import com.cifprodolfoucha.PSFilms.R;
  * to handle interaction events.
  */
 public class fragmentOtras extends Fragment {
-
+    private RecyclerView rcPeliculas;
+    private GridLayoutManager glm;
+    private PeliculasAdapter adapter;
     private OnFragmentInteractionListener mListener;
-
+    private Activity activity;
     public static fragmentOtras newInstance() {
         fragmentOtras f = new fragmentOtras();
         return f;
@@ -33,7 +44,23 @@ public class fragmentOtras extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.layout_fragment_otras_activity, container, false);
+
+
+
+
+        View view = inflater.inflate(R.layout.layout_fragment_otras_activity, container, false);
+
+
+
+        rcPeliculas = view.findViewById(R.id.rcRecyclerView_Otras);
+        glm= new GridLayoutManager(activity,3);
+        rcPeliculas.setLayoutManager(glm);
+        adapter = new PeliculasAdapter(dataSet());
+        rcPeliculas.setAdapter(adapter);
+
+        return view;
+
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -73,5 +100,17 @@ public class fragmentOtras extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    private ArrayList<Pelicula> dataSet() {
+        ArrayList<Pelicula> data = new ArrayList<>();
+
+        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018));
+        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018));
+        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018));
+        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018));
+        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018));
+
+        return data;
     }
 }

@@ -1,9 +1,12 @@
 package com.cifprodolfoucha.PSFilms;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,8 +20,16 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import com.cifprodolfoucha.PSFilms.clases.Pelicula;
+import com.cifprodolfoucha.PSFilms.clasesAdaptadoras.PeliculasAdapter;
+
+import java.util.ArrayList;
+
 public class Activity_inicio extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private RecyclerView rcPeliculas;
+    private GridLayoutManager glm;
+    private PeliculasAdapter adapter;
     TableLayout table;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +56,15 @@ public class Activity_inicio extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+            rcPeliculas = findViewById(R.id.rcRecyclerView_Inicio);
+            glm= new GridLayoutManager(this,2);
+            rcPeliculas.setLayoutManager(glm);
+            adapter = new PeliculasAdapter(dataSet());
+            rcPeliculas.setAdapter(adapter);
 
 
+
+/*
         table=(TableLayout)findViewById(R.id.tlTableLayout_Inicio);
 
         table.setStretchAllColumns(true);
@@ -108,12 +126,31 @@ public class Activity_inicio extends AppCompatActivity
         table.addView(fila2);
         table.addView(fila3);
 
+*/
+
+
+
+
+
 
 
 
 
     }
 
+
+
+    private ArrayList<Pelicula> dataSet() {
+        ArrayList<Pelicula> data = new ArrayList<>();
+
+        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018));
+        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018));
+        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018));
+        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018));
+        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018));
+
+        return data;
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

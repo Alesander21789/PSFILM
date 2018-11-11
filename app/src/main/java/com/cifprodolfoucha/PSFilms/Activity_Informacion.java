@@ -23,7 +23,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.cifprodolfoucha.PSFilms.clases.Comentario;
+
 import com.cifprodolfoucha.PSFilms.clasesAdaptadoras.ComentariosAdapter;
+
 import com.cifprodolfoucha.PSFilms.fragments.fragmentComentarios;
 import com.cifprodolfoucha.PSFilms.fragments.fragmentOtras;
 import com.cifprodolfoucha.PSFilms.fragments.fragmentReparto;
@@ -39,9 +41,11 @@ public class Activity_Informacion extends AppCompatActivity  implements fragment
     private GridLayoutManager glm;
     private Activity activity;
     private ComentariosAdapter adapter;
+
     private Button btnExpBottomSheet;
     private LinearLayout bottomSheet;
     private Fragment fragmento=null;
+    private RecyclerView rcPeliculas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,12 +62,19 @@ public class Activity_Informacion extends AppCompatActivity  implements fragment
 
         // Persistent BottomSheet
         init_persistent_bottomsheet();
+
+
+
         glm = new GridLayoutManager(activity, 1);
         comentarios=(RecyclerView)findViewById(R.id.recyclerComentarios);
         comentarios.setLayoutManager(glm);
 
         adapter= new ComentariosAdapter(dataSet());
         comentarios.setAdapter(adapter);
+
+
+
+
 
     }
 
@@ -98,6 +109,7 @@ public class Activity_Informacion extends AppCompatActivity  implements fragment
 
 
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -116,10 +128,10 @@ public class Activity_Informacion extends AppCompatActivity  implements fragment
                 //obtener una nueva transaccion
                 FragmentTransaction transaccion = fragmentmanager.beginTransaction();
                 //crear un nuevo fragmento y añadirlo
-                fragmentResumen fragment = new fragmentResumen();
+              fragmentResumen fragment = fragmentResumen.newInstance();
                 fragmento=fragment;
-                transaccion.add(R.id.cdCordinatorLayout_Informacion,fragment);
-                transaccion.replace(R.id.cdCordinatorLayout_Informacion,fragment);
+                transaccion.add(R.id.llLinearLayout_Informacion,fragment);
+                transaccion.replace(R.id.llLinearLayout_Informacion,fragment);
                 //confirmo la transaccion
                 transaccion.addToBackStack(null);
                 transaccion.commit();
@@ -136,9 +148,9 @@ public class Activity_Informacion extends AppCompatActivity  implements fragment
                 //crear un nuevo fragmento y añadirlo
                 fragmentReparto fragment2 = new fragmentReparto();
                 fragmento= fragment2;
-                transaccion2.add(R.id.cdCordinatorLayout_Informacion,fragment2);
+                transaccion2.add(R.id.llLinearLayout_Informacion,fragment2);
                 //confirmo la transaccion
-                transaccion2.replace(R.id.cdCordinatorLayout_Informacion,fragment2);
+                transaccion2.replace(R.id.llLinearLayout_Informacion,fragment2);
                 transaccion2.addToBackStack(null);
                 transaccion2.commit();
 
@@ -167,9 +179,9 @@ public class Activity_Informacion extends AppCompatActivity  implements fragment
                 //crear un nuevo fragmento y añadirlo
                 fragmentComentarios fragment4 = new fragmentComentarios();
                 fragmento= fragment4;
-                transaccion4.add(R.id.cdCordinatorLayout_Informacion,fragment4);
+                transaccion4.add(R.id.llLinearLayout_Informacion,fragment4);
                 //confirmo la transaccion
-                transaccion4.replace(R.id.cdCordinatorLayout_Informacion,fragment4);
+                transaccion4.replace(R.id.llLinearLayout_Informacion,fragment4);
                 transaccion4.addToBackStack(null);
                 transaccion4.commit();
 
@@ -186,9 +198,9 @@ public class Activity_Informacion extends AppCompatActivity  implements fragment
                 //crear un nuevo fragmento y añadirlo
                 fragmentOtras fragment5 = new fragmentOtras();
                 fragmento= fragment5;
-                transaccion5.add(R.id.cdCordinatorLayout_Informacion,fragment5);
+                transaccion5.add(R.id.llLinearLayout_Informacion,fragment5);
                 //confirmo la transaccion
-                transaccion5.replace(R.id.cdCordinatorLayout_Informacion,fragment5);
+                transaccion5.replace(R.id.llLinearLayout_Informacion,fragment5);
                 transaccion5.addToBackStack(null);
                 transaccion5.commit();
 
@@ -215,6 +227,12 @@ public class Activity_Informacion extends AppCompatActivity  implements fragment
 
     @Override
     public void onClick(View v) {
+
+
+
+
+
+
 
 
     }
