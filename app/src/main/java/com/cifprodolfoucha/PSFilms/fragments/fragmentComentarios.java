@@ -20,6 +20,13 @@ public class fragmentComentarios extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
+
+    public static fragmentComentarios newInstance() {
+        fragmentComentarios fragment = new fragmentComentarios();
+        return fragment;
+    }
+
+
     public fragmentComentarios() {
         // Required empty public constructor
     }

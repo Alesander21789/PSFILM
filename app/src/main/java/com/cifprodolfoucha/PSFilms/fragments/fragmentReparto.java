@@ -20,6 +20,12 @@ public class fragmentReparto extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
+    public static fragmentReparto newInstance() {
+        fragmentReparto f = new fragmentReparto();
+        return f;
+    }
+
+
     public fragmentReparto() {
         // Required empty public constructor
     }

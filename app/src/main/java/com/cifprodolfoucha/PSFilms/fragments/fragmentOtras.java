@@ -20,6 +20,10 @@ public class fragmentOtras extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
+    public static fragmentOtras newInstance() {
+        fragmentOtras f = new fragmentOtras();
+        return f;
+    }
     public fragmentOtras() {
         // Required empty public constructor
     }

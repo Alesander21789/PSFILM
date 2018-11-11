@@ -20,6 +20,11 @@ public class fragmentResumen extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
+    public static fragmentResumen newInstance() {
+        fragmentResumen f = new fragmentResumen();
+        return f;
+    }
+
     public fragmentResumen() {
         // Required empty public constructor
     }
