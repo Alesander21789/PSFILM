@@ -5,7 +5,7 @@ public class Pelicula {
 
    private int imagen;
    private String nombre;
-   private int año;
+   private String año;
 
     public int getImagen() {
         return imagen;
@@ -23,15 +23,15 @@ public class Pelicula {
         this.nombre = nombre;
     }
 
-    public int getAño() {
+    public String getAño() {
         return año;
     }
 
-    public void setAño(int año) {
+    public void setAño(String año) {
         this.año = año;
     }
 
-    public Pelicula(int imagen, String nombre, int año) {
+    public Pelicula(int imagen, String nombre, String año) {
 
         this.imagen = imagen;
         this.nombre = nombre;

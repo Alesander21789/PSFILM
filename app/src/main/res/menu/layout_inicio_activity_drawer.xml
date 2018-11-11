@@ -16,18 +16,39 @@
             android:title="Cerrar sesión" />
 
     </group>
-    <!--
-        <item android:title="Communicate">
+
+        <item android:title="Series">
             <menu>
+
                 <item
-                    android:id="@+id/nav_share"
-                    android:icon="@drawable/ic_menu_share"
-                    android:title="Share" />
+                    android:id="@+id/nav_DescubirSeries"
+                    android:icon="@drawable/ic_action_view_as_list"
+                    android:title="Descubirir" />
+
                 <item
-                    android:id="@+id/nav_send"
-                    android:icon="@drawable/ic_menu_send"
-                    android:title="Send" />
+                    android:id="@+id/nav_favoritosSeries"
+                    android:icon="@drawable/ic_action_favorite"
+                    android:title="Favoritos" />
             </menu>
         </item>
-    -->
+
+
+    <item android:title="Peliculas">
+    <menu>
+        ic_action_sort_by_size
+
+        <item
+            android:id="@+id/nav_favoritosPeliculas"
+            android:icon="@drawable/ic_action_favorite"
+            android:title="Favoritos" />
+        <item
+            android:id="@+id/nav_DescubirPeliculas"
+            android:icon="@drawable/ic_action_view_as_list"
+            android:title="Descubirir" />
+
+
+
+
+    </menu>
+    </item>
 </menu>

@@ -105,12 +105,16 @@ public class fragmentOtras extends Fragment {
     private ArrayList<Pelicula> dataSet() {
         ArrayList<Pelicula> data = new ArrayList<>();
 
-        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018));
-        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018));
-        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018));
-        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018));
-        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018));
-
+        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018+""));
+        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018+""));
+        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018+""));
+        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018+""));
+        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018+""));
+        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018+""));
+        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018+""));
+        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018+""));
+        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018+""));
+        data.add(new Pelicula(R.drawable.imagen_all_venom,"Venom",2018+""));
         return data;
     }
 }
