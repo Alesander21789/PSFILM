@@ -1,11 +1,15 @@
 package com.cifprodolfoucha.PSFilms.clasesAdaptadoras;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.cifprodolfoucha.PSFilms.Activity_Informacion2;
 import com.cifprodolfoucha.PSFilms.R;
 import com.cifprodolfoucha.PSFilms.clases.Pelicula;
 
@@ -40,17 +44,41 @@ public class PeliculasAdapter extends RecyclerView.Adapter<PeliculasAdapter.Peli
         return data.size();
     }
 
-    class PeliculasViewHolder extends RecyclerView.ViewHolder {
+    class PeliculasViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener{
 
         ImageView imgPelicula;
         TextView nombrePleicula;
         TextView año;
-
+        Context c;
         public PeliculasViewHolder(View itemView) {
             super(itemView);
             imgPelicula = (ImageView) itemView.findViewById(R.id.img_pelicula);
             nombrePleicula = (TextView) itemView.findViewById(R.id.nombrePelicula);
             año = (TextView) itemView.findViewById(R.id.año);
+            c= itemView.getContext();
+            setOnClickListener();
+        }
+
+
+        @Override
+        public void onClick(View v) {
+
+            Intent intent = new Intent(c, Activity_Informacion2.class);
+            //EditText editText = (EditText) findViewById(R.id.editText);
+            //String message = editText.getText().toString();
+            // intent.putExtra(EXTRA_MESSAGE, message);
+            c.startActivity(intent);
+
+
+
+        }
+
+        void setOnClickListener() {
+
+
+
+            imgPelicula.setOnClickListener(this);
+
         }
     }
 }

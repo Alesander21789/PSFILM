@@ -7,10 +7,10 @@ import android.net.Uri;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
+
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -20,14 +20,15 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.cifprodolfoucha.PSFilms.clasesAdaptadoras.MiFragmentPagerAdapter;
+
 import com.cifprodolfoucha.PSFilms.fragments.fragmentComentarios;
 import com.cifprodolfoucha.PSFilms.fragments.fragmentOtras;
 import com.cifprodolfoucha.PSFilms.fragments.fragmentReparto;
 import com.cifprodolfoucha.PSFilms.fragments.fragmentResumen;
+import com.cifprodolfoucha.PSFilms.fragments.fragmentVerComentarios;
 
 
-public class Activity_Informacion2 extends AppCompatActivity implements fragmentResumen.OnFragmentInteractionListener, fragmentReparto.OnFragmentInteractionListener,fragmentOtras.OnFragmentInteractionListener,fragmentComentarios.OnFragmentInteractionListener, View.OnClickListener  {
+public class Activity_Informacion2 extends AppCompatActivity implements fragmentResumen.OnFragmentInteractionListener, fragmentReparto.OnFragmentInteractionListener,fragmentOtras.OnFragmentInteractionListener,fragmentComentarios.OnFragmentInteractionListener, fragmentVerComentarios.OnFragmentInteractionListener,View.OnClickListener  {
 
 
 
@@ -161,6 +162,23 @@ public class Activity_Informacion2 extends AppCompatActivity implements fragment
 
 
 
+                }else if(item.getItemId()==R.id.ver_comentarios) {
+
+
+
+                    fragmentVerComentarios f = new fragmentVerComentarios();
+                    // getSupportFragmentManager().beginTransaction().replace(R.id.cambio2,f).addToBackStack(null).commit();
+
+                    FragmentManager fragmentmanager =getSupportFragmentManager();
+                    //obtener una nueva transaccion
+                    FragmentTransaction transaccion = fragmentmanager.beginTransaction();
+                    transaccion.add(R.id.cambio,f);
+                    transaccion.replace(R.id.cambio,f);
+                    transaccion.addToBackStack(null);
+                    transaccion.commit();
+
+
+
                 }
 
 
@@ -192,11 +210,13 @@ public class Activity_Informacion2 extends AppCompatActivity implements fragment
         int id = item.getItemId();
 
         switch (id) {
-            case R.id.action_settings:
-                showSnackBar("Se abren los ajustes");
-                return true;
+
             case R.id.action_add:
-                showSnackBar("Añadir a contactos");
+                Intent intent = new Intent(this, Activity_VerComentarios.class);
+                //EditText editText = (EditText) findViewById(R.id.editText);
+                //String message = editText.getText().toString();
+                // intent.putExtra(EXTRA_MESSAGE, message);
+                startActivity(intent);
                 return true;
             case R.id.action_favorite:
                 showSnackBar("Añadir a favoritos");

@@ -171,7 +171,7 @@ public class Activity_Informacion extends AppCompatActivity  implements fragment
                 return true;
 */
 
-            case R.id.añadir_comentarios:
+            case R.id.ver_comentarios:
                 //Obtener la instancia del administrador de fragmentos
                 FragmentManager fragmentmanager4 =getSupportFragmentManager();
                 //obtener una nueva transaccion

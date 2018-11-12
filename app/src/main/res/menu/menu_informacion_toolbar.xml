@@ -16,8 +16,8 @@
     <item android:title="Peliculas o series del mismo género"
         app:showAsAction="always"
         android:id="@+id/otras"/>
-    <item android:title="Añadir comentarios"
+    <item android:title="Ver Comentarios"
         app:showAsAction="always"
-        android:id="@+id/añadir_comentarios"/>
+        android:id="@+id/ver_comentarios"/>
 
 </menu>
