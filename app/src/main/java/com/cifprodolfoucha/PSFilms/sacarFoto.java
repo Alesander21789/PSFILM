@@ -103,11 +103,31 @@ public class sacarFoto extends Activity implements View.OnClickListener {
 
 
     */
+  @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_sacarfoto_activity);
 
+
+
+        Button boton = (Button)findViewById(R.id.btnCameraPermission);
+        boton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if ((Build.VERSION.SDK_INT >= 24)) {
+
+                    if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                        //Si el permiso no se encuentra concedido se solicita
+                        requestPermissions(new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_REQUEST_CODE);
+                    } else {
+                        //Si el permiso esá concedico prosigue con el flujo normal
+                        permissionGranted();
+                    }
+
+                }
+            }
+        });
 
     }
 
