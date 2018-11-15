@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="str_inicio_item_itBuscar_inicio">Imagen buscar</string>
-    <string name="str_inicio_item_itImagenRegistro_inicio">Imagen registro</string>
-    <string name="str_inicio_item_itImagenLogin_inicio">Imagen registro</string>
+    <string name="str_inicio_item_itImagenRegistro_inicio">Toca para registrarte</string>
+    <string name="str_inicio_item_itImagenLogin_inicio">Toca para loguearte</string>
 </resources>

@@ -67,6 +67,9 @@ public class PeliculasAdapter extends RecyclerView.Adapter<PeliculasAdapter.Peli
             //EditText editText = (EditText) findViewById(R.id.editText);
             //String message = editText.getText().toString();
             // intent.putExtra(EXTRA_MESSAGE, message);
+
+
+            intent.putExtra("nombre", nombrePleicula.getText());
             c.startActivity(intent);
 
 

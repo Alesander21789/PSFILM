@@ -1,6 +1,8 @@
 package com.cifprodolfoucha.PSFilms.clases;
 
-public class Comentario {
+import java.io.Serializable;
+
+public class Comentario implements Serializable {
 
 
     String comentario;
@@ -17,6 +19,7 @@ public class Comentario {
                 ", perosna='" + perosna + '\'' +
                 '}';
     }
+
 
     public String getPerosna() {
         return perosna;

@@ -1,6 +1,8 @@
 package com.cifprodolfoucha.PSFilms.clases;
 
-public class Actor {
+import java.io.Serializable;
+
+public class Actor implements Serializable {
 
     private String nombre;
     private String artista;

@@ -21,7 +21,7 @@ import android.widget.Toast;
 
 import com.cifprodolfoucha.PSFilms.clases.Save;
 
-public class sacarFoto extends Activity implements View.OnClickListener {
+public class sacarFoto extends Activity  {
     // Usado por si necesitamos diferentes permisos, para identificar cual de ellos es
     private final int CODIGO_IDENTIFICADOR=1;
     ImageView image;
@@ -32,10 +32,10 @@ public class sacarFoto extends Activity implements View.OnClickListener {
 
     //...
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 1;
-    private static final int SENSOR_PERMISSION_REQUEST_CODE = 2;
+    private static final int TARJETASD_PERMISSION_REQUEST_CODE = 2;
     private static final  int REQUEST_IMAGE_CAPTURE=1;
     //...
-
+/*
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onClick(View v) {
@@ -50,7 +50,7 @@ public class sacarFoto extends Activity implements View.OnClickListener {
                    requestPermissions(new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_REQUEST_CODE);
                 } else {
                     //Si el permiso esá concedico prosigue con el flujo normal
-                    permissionGranted();
+                    permissionGrantedF();
                 }
             }else {
 
@@ -63,13 +63,16 @@ public class sacarFoto extends Activity implements View.OnClickListener {
                 //Verifica si el permiso de los sensores no está concedido
                 if (checkSelfPermission(Manifest.permission.BODY_SENSORS) != PackageManager.PERMISSION_GRANTED) {
                     //Si el permiso no se encuentra concedido se solicita
-                    requestPermissions( new String[]{Manifest.permission.BODY_SENSORS}, SENSOR_PERMISSION_REQUEST_CODE);
+                    requestPermissions( new String[]{Manifest.permission.BODY_SENSORS}, TARJETASD_PERMISSION_REQUEST_CODE);
                 } else {
                     //Si el permiso está concedido prosigue con el flujo normal
-                    permissionGranted();
+                    permissionGrantedT();
                 }
                 break;
         }
+    }
+*/
+    private void permissionGrantedT() {
     }
 
     @Override
@@ -106,7 +109,7 @@ public class sacarFoto extends Activity implements View.OnClickListener {
 
 
 
-    private void permissionGranted() {
+    private void permissionGrantedF() {
         //Toast.makeText(this, getString(R.string.permission_granted), Toast.LENGTH_SHORT).show();
 
 
@@ -173,7 +176,7 @@ public class sacarFoto extends Activity implements View.OnClickListener {
                         requestPermissions(new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_REQUEST_CODE);
                     } else {
                         //Si el permiso esá concedico prosigue con el flujo normal
-                        permissionGranted();
+                        permissionGrantedF();
                     }
 
                 }
@@ -182,7 +185,7 @@ public class sacarFoto extends Activity implements View.OnClickListener {
 
     }
 
-
+/*
   @Override
   public void onRequestPermissionsResult(int requestCode, String[] permissions,  int[] grantResults) {
       super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -211,7 +214,7 @@ public class sacarFoto extends Activity implements View.OnClickListener {
       }
     }
 
-
+*/
 
 
 

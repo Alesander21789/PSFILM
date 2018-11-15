@@ -3,12 +3,14 @@ package com.cifprodolfoucha.PSFilms.fragments;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.cifprodolfoucha.PSFilms.R;
+import com.cifprodolfoucha.PSFilms.clases.Contenedor;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,12 +19,25 @@ import com.cifprodolfoucha.PSFilms.R;
  * to handle interaction events.
  */
 public class fragmentResumen extends Fragment {
-
+private   Contenedor c;
     private OnFragmentInteractionListener mListener;
 
     public static fragmentResumen newInstance() {
         fragmentResumen f = new fragmentResumen();
         return f;
+    }
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        if (getArguments()!= null) {
+
+
+             c = (Contenedor) getArguments().getSerializable("Objeto");
+
+        }
     }
 
     public fragmentResumen() {

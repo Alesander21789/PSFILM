@@ -21,6 +21,8 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 
+import com.cifprodolfoucha.PSFilms.clases.Contenedor;
+import com.cifprodolfoucha.PSFilms.clases.Contenido;
 import com.cifprodolfoucha.PSFilms.fragments.fragmentComentarios;
 import com.cifprodolfoucha.PSFilms.fragments.fragmentOtras;
 import com.cifprodolfoucha.PSFilms.fragments.fragmentReparto;
@@ -35,7 +37,7 @@ public class Activity_Informacion2 extends AppCompatActivity implements fragment
 
     private   Toolbar toolbar;
     private int idDrawable;
-
+    private  Contenido c=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +69,11 @@ public class Activity_Informacion2 extends AppCompatActivity implements fragment
         );
 
 
+
+
+
+         c = Contenedor.devolverCotenido(  getIntent().getExtras().getString("nombre"));
+
         /*
         ViewPager viewPager =  findViewById(R.id.viewpager1);
         viewPager.setAdapter(new MiFragmentPagerAdapter(
@@ -84,6 +91,8 @@ public class Activity_Informacion2 extends AppCompatActivity implements fragment
 
     }
 
+
+
     private void setToolbar(String nombre) {
         // Añadir la Toolbar
         toolbar =  findViewById(R.id.toolbarInformacion2);
@@ -91,7 +100,9 @@ public class Activity_Informacion2 extends AppCompatActivity implements fragment
         toolbar.setTitle(nombre);
         toolbar = findViewById(R.id.tb_informacion);
         toolbar.inflateMenu(R.menu.menu_informacion_toolbar);
-
+   final Bundle bundle = new Bundle();
+        bundle.putSerializable("Objeto",c);
+//para recoger getSerializable(String key) MiObjeto objeto = (MiObjeto) bundle.getSerializable("mi_objeto");
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -100,11 +111,13 @@ public class Activity_Informacion2 extends AppCompatActivity implements fragment
 
 
                     fragmentResumen f = fragmentResumen.newInstance();
+                    f.setArguments(bundle);
                    // getSupportFragmentManager().beginTransaction().replace(R.id.cambio,f).addToBackStack(null).commit();
 
                     FragmentManager fragmentmanager =getSupportFragmentManager();
                     //obtener una nueva transaccion
                    FragmentTransaction transaccion = fragmentmanager.beginTransaction();
+
                     transaccion.add(R.id.cambio,f);
                     transaccion.replace(R.id.cambio,f);
                     transaccion.addToBackStack(null);
@@ -115,7 +128,7 @@ public class Activity_Informacion2 extends AppCompatActivity implements fragment
 
                     fragmentReparto f = new fragmentReparto();
                     // getSupportFragmentManager().beginTransaction().replace(R.id.cambio2,f).addToBackStack(null).commit();
-
+                    f.setArguments(bundle);
                     FragmentManager fragmentmanager =getSupportFragmentManager();
                     //obtener una nueva transaccion
                     FragmentTransaction transaccion = fragmentmanager.beginTransaction();
@@ -133,7 +146,7 @@ public class Activity_Informacion2 extends AppCompatActivity implements fragment
 
                     fragmentComentarios f = new fragmentComentarios();
                     // getSupportFragmentManager().beginTransaction().replace(R.id.cambio2,f).addToBackStack(null).commit();
-
+                    f.setArguments(bundle);
                     FragmentManager fragmentmanager =getSupportFragmentManager();
                     //obtener una nueva transaccion
                     FragmentTransaction transaccion = fragmentmanager.beginTransaction();
@@ -151,7 +164,7 @@ public class Activity_Informacion2 extends AppCompatActivity implements fragment
 
                     fragmentOtras f = new fragmentOtras();
                     // getSupportFragmentManager().beginTransaction().replace(R.id.cambio2,f).addToBackStack(null).commit();
-
+                    f.setArguments(bundle);
                     FragmentManager fragmentmanager =getSupportFragmentManager();
                     //obtener una nueva transaccion
                     FragmentTransaction transaccion = fragmentmanager.beginTransaction();
@@ -168,7 +181,7 @@ public class Activity_Informacion2 extends AppCompatActivity implements fragment
 
                     fragmentVerComentarios f = new fragmentVerComentarios();
                     // getSupportFragmentManager().beginTransaction().replace(R.id.cambio2,f).addToBackStack(null).commit();
-
+                    f.setArguments(bundle);
                     FragmentManager fragmentmanager =getSupportFragmentManager();
                     //obtener una nueva transaccion
                     FragmentTransaction transaccion = fragmentmanager.beginTransaction();

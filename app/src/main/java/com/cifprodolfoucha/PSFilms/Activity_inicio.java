@@ -213,6 +213,14 @@ public class Activity_inicio extends AppCompatActivity
                 // toast1.show();
 
                 return true;
+            case R.id.itCargarxml_inicio:
+
+                Intent intent3 = new Intent(this, Activity_CargarXml.class);
+                //EditText editText = (EditText) findViewById(R.id.editText);
+                //String message = editText.getText().toString();
+                // intent.putExtra(EXTRA_MESSAGE, message);
+                startActivity(intent3);
+
 
 
             default:
@@ -228,6 +236,8 @@ public class Activity_inicio extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+
+
 
 
 
