@@ -29,6 +29,6 @@
         android:layout_toRightOf="@+id/icon"
         android:layout_below="@+id/title"
         android:paddingLeft="14dp"
-      
+
         android:textSize="14dp"/>
 </LinearLayout>
